@@ -1,0 +1,27 @@
+/* Body styles: Sets the overall font family, removes default margins, applies a dark blue background, and sets white text color for the entire page */
+body{
+    font-family: Arial;
+    margin:0;
+    background:#0f172a;
+    color:white;
+}
+
+/* Header styles: Uses flexbox to layout elements horizontally with space between them, adds padding, and sets a darker blue background */
+header{
+    display:flex;
+    justify-content:space-between;
+    padding:20px;
+    background:#020617;
+}
+
+/* Navigation link styles: Adds left margin to links, sets white color, and removes text decoration for a clean look */
+nav a{
+    margin-left:15px;
+    color:white;
+    text-decoration:none;
+}
+
+/* Section styles: Adds padding to all sections for spacing and readability */
+section{
+    padding:80px 40px;
+}
