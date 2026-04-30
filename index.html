@@ -4,29 +4,57 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Giovanni Benefico — Portfolio</title>
+
+  <!-- Preconnect per ridurre la latenza nel caricamento dei font Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!--
+    Font utilizzati:
+    - Inter          → testo corpo generico
+    - JetBrains Mono → etichette monospazio (badge, stat, codice)
+    - Press Start 2P → font pixel-art per l'estetica Pokédex
+    - Space Grotesk  → titoli e testo display ad alto impatto
+  -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Foglio di stile principale -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ══════════════════════════════════════════════════════════
+     HAMBURGER BUTTON — visibile solo su mobile (< 900px)
+     Apre/chiude la sidebar tramite la classe CSS "open"
+     ══════════════════════════════════════════════════════════ -->
 <button id="burger" aria-label="Menu">
   <span class="burger-line"></span>
   <span class="burger-line"></span>
   <span class="burger-line"></span>
 </button>
+
+<!-- Overlay semitrasparente che copre il main quando la sidebar è aperta su mobile -->
 <div id="overlay"></div>
 
+<!-- ══════════════════════════════════════════════════════════
+     APP WRAPPER — flex container che affianca sidebar e main
+     ══════════════════════════════════════════════════════════ -->
 <div id="app">
 
-  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════════════
+       SIDEBAR — navigazione fissa a sinistra (300px)
+       Contiene: logo, trainer card, nav, selettore lingua, footer
+       ══════════════════════════════════════════════════════ -->
   <aside id="sidebar">
+
+    <!-- Logo POKÉDEX OS con la Poké Ball CSS-only -->
     <div class="sidebar-logo">
       <span class="pixel-ball"></span>
       <span class="pokefont" style="font-size:10px">POKÉDEX OS</span>
     </div>
 
+    <!-- Trainer card: avatar placeholder + nome + handle GitHub + ruolo
+         I testi con data-i vengono tradotti da applyLang() in script.js -->
     <div class="trainer-card">
       <div class="trainer-avatar">
         <span class="trainer-avatar-placeholder">👾</span>
@@ -36,8 +64,12 @@
       <div style="font-size:13px;color:rgba(0,0,0,.65)" data-i="role-sidebar">Studente di Informatica & Sviluppatore · Bari, IT</div>
     </div>
 
+    <!-- Separatore decorativo a punti -->
     <div class="dot-rule"></div>
 
+    <!-- Navigazione principale — ogni button porta alla sezione corrispondente
+         data-sec viene letto da goTo() in script.js
+         La classe "active" aggiunge il riempimento rosso via CSS ::before -->
     <nav id="nav">
       <button class="nav-btn active" data-sec="hero">
         <span class="nav-label"><span class="nav-num">01</span><span data-i="nav-home">Home</span></span>
@@ -65,39 +97,60 @@
       </button>
     </nav>
 
+    <!-- Separatore decorativo a punti -->
     <div class="dot-rule"></div>
 
+    <!-- Selettore lingua IT / EN
+         Al click chiama applyLang(lang) che aggiorna tutti i data-i nel DOM -->
     <div class="lang-pill">
       <button class="lang-btn active" data-lang="it">IT</button>
       <button class="lang-btn" data-lang="en">EN</button>
     </div>
 
+    <!-- Footer sidebar con versione e build tag -->
     <div class="sidebar-footer">
       © 2026 — BENEFICO.DEX<br>
       v.1.7.07 · build@bari
     </div>
   </aside>
 
-  <!-- ══ MAIN ═════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════════════
+       MAIN — area di contenuto a destra della sidebar
+       Mostra una sola sezione alla volta (classe "active")
+       Le sezioni inattive hanno display:none via CSS
+       ══════════════════════════════════════════════════════ -->
   <main id="main">
 
-    <!-- ── HERO ─────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 01 · HERO
+         Pagina iniziale: badge, nome, bio, stat card Pokémon
+         #heroGlow segue il cursore con un alone rosso radiale
+         ──────────────────────────────────────────────────── -->
     <section class="section active" id="sec-hero">
+
+      <!-- Alone decorativo che segue il cursore (posizionato via JS) -->
       <div class="hero-glow" id="heroGlow"></div>
 
+      <!-- Badge monospazio con numero di entrata e città -->
       <div class="hero-badge mono reveal d1">
         ENTRY · #1707 / TRAINER · <span data-i="location">BARI, ITALIA</span>
       </div>
 
+      <!-- Nome principale a tutto schermo -->
       <h1 class="hero-name reveal d2">
         Giovanni<br>Benefico<span class="dot">.</span>
       </h1>
 
+      <!-- Grid a due colonne: bio a sinistra, stat card a destra -->
       <div class="hero-grid">
+
+        <!-- Bio testuale tradotta via i18n -->
         <p class="hero-bio reveal d3" data-i="about">
           Studente di Informatica all'Università di Bari, con un diploma da Perito Informatico. Mi muovo tra C, C++, Java e Python, ma resto curioso davanti a tutto ciò che si può programmare. Costruisco progetti, imparo dagli errori, e ogni bug sconfitto è un punto esperienza guadagnato.
         </p>
 
+        <!-- Stat card ispirata alla scheda Pokémon
+             data-val viene letto da animateStatBars() per riempire le barre -->
         <div class="stats-card reveal d4">
           <div class="stats-label">BASE STATS</div>
           <div class="stat-row">
@@ -120,6 +173,7 @@
             <span class="stat-name">SPD</span><span class="stat-val">80</span>
             <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#FFCB05" data-val="80"></div></div>
           </div>
+          <!-- Footer della card con handle del proprietario -->
           <div class="stats-owner">
             <span class="mono" style="font-size:11px;color:rgba(0,0,0,.45)">OWNED BY</span>
             <span class="display" style="font-weight:700">@Gianni1707</span>
@@ -128,15 +182,21 @@
       </div>
     </section>
 
-    <!-- ── ABOUT ─────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 02 · ABOUT
+         Profilo allenatore: bio + tabella fatti (città, status, lingue, disponibilità)
+         ──────────────────────────────────────────────────── -->
     <section class="section" id="sec-about">
       <div class="section-eyebrow reveal">02 · <span data-i="sec-about">PROFILO ALLENATORE</span></div>
       <h2 class="section-title reveal d1" data-i="sec-about-title">Profilo Allenatore</h2>
 
+      <!-- Grid a due colonne: bio a sinistra, fact list a destra -->
       <div class="about-grid">
         <p class="about-bio reveal d2" data-i="about">
           Studente di Informatica all'Università di Bari, con un diploma da Perito Informatico. Mi muovo tra C, C++, Java e Python, ma resto curioso davanti a tutto ciò che si può programmare. Costruisco progetti, imparo dagli errori, e ogni bug sconfitto è un punto esperienza guadagnato.
         </p>
+
+        <!-- Lista di fatti rapidi con chiave in font pixelato e valore in grassetto -->
         <ul class="about-facts reveal d3">
           <li class="about-fact">
             <span class="about-fact-key" data-i="fact-base">BASE</span>
@@ -158,12 +218,20 @@
       </div>
     </section>
 
-    <!-- ── EDUCATION ─────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 03 · EDUCATION
+         Percorso formativo come badge da palestra Pokémon:
+         - Esagono blu → Università di Bari
+         - Pentagono verde → ITIS (diploma perito informatico)
+         ──────────────────────────────────────────────────── -->
     <section class="section" id="sec-edu">
       <div class="section-eyebrow reveal">03 · <span data-i="sec-edu">BADGE OTTENUTI</span></div>
       <h2 class="section-title reveal d1" data-i="sec-edu-title">Badge Ottenuti</h2>
 
+      <!-- Grid a due colonne con una card per istituto -->
       <div class="edu-grid">
+
+        <!-- Card Università — badge esagonale (clip-path: polygon hex) -->
         <div class="edu-card reveal d2">
           <div class="edu-badge hex" style="background:#3B5BAA">
             <span class="pokefont" style="font-size:14px">U</span>
@@ -175,6 +243,8 @@
             <span class="chip-8">LV. UNI</span>
           </div>
         </div>
+
+        <!-- Card ITIS — badge pentagonale (clip-path: polygon pent) -->
         <div class="edu-card reveal d3">
           <div class="edu-badge pent" style="background:#6FAE54">
             <span class="pokefont" style="font-size:14px">I</span>
@@ -189,7 +259,14 @@
       </div>
     </section>
 
-    <!-- ── SKILLS ─────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 04 · SKILLS
+         Tecnologie come tipi Pokémon in una tabella interattiva.
+         Cliccando su una riga (#skillTable) si popola #movesPanel
+         con le "mosse" (tecniche specifiche) di quel tipo.
+         Il contenuto è generato dinamicamente da renderSkills()
+         e selectSkill() in script.js.
+         ──────────────────────────────────────────────────── -->
     <section class="section" id="sec-skills">
       <div class="section-eyebrow reveal">04 · <span data-i="sec-skills">TIPI &amp; MOSSE</span></div>
       <h2 class="section-title reveal d1" data-i="sec-skills-title">Tipi &amp; Mosse</h2>
@@ -197,9 +274,14 @@
         Le mie skill come tipi Pokémon. Ogni tipo ha le sue mosse.
       </p>
 
+      <!-- Grid a due colonne: tabella skill a sinistra, pannello mosse a destra -->
       <div class="skills-grid">
+        <!-- Contenitore della tabella — popolato da renderSkills() -->
         <div class="skill-table reveal d2" id="skillTable"></div>
+
+        <!-- Pannello laterale delle mosse — popolato da renderMovesPanel() -->
         <div class="moves-panel reveal d3" id="movesPanel">
+          <!-- Stato iniziale: invito a cliccare un tipo -->
           <div class="moves-empty body">
             <span class="hint-arrow">↑</span> <span data-i="click-hint">Clicca un tipo per vedere le mosse</span>
           </div>
@@ -207,17 +289,29 @@
       </div>
     </section>
 
-    <!-- ── PROJECTS ───────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 05 · PROJECTS
+         Card dei progetti generate dinamicamente dall'array
+         PROJECTS in script.js tramite renderProjects().
+         Ogni card è un link <a> al repository GitHub.
+         ──────────────────────────────────────────────────── -->
     <section class="section" id="sec-projects">
       <div class="section-eyebrow reveal">05 · <span data-i="sec-projects">POKÉDEX DEI PROGETTI</span></div>
       <h2 class="section-title reveal d1" data-i="sec-projects-title">Pokédex dei Progetti</h2>
       <p class="reveal d2" style="font-size:15px;color:rgba(0,0,0,.55);margin-bottom:24px;max-width:600px" data-i="projects-sub">
         Una collezione di creature digitali catturate su GitHub.
       </p>
+      <!-- Contenitore della griglia — popolato da renderProjects() -->
       <div class="projects-grid reveal d3" id="projectsGrid"></div>
     </section>
 
-    <!-- ── CONTACT ────────────────────────────────── -->
+    <!-- ────────────────────────────────────────────────────
+         SEZIONE 06 · CONTACT
+         Sezione su sfondo scuro (--ink) con:
+         - quattro link card (email, telefono, GitHub, LinkedIn)
+         - form HTML5 con validazione nativa e feedback di successo
+         handleForm() in script.js gestisce il submit
+         ──────────────────────────────────────────────────── -->
     <section class="section" id="sec-contact">
       <div class="contact-eyebrow reveal mono">06 · <span data-i="sec-contact">PUNTO DI CONTATTO</span></div>
       <h2 class="contact-title reveal d1 display">
@@ -227,7 +321,10 @@
         Pronto per una nuova sfida? Mandami un messaggio.
       </p>
 
+      <!-- Grid a due colonne: link cards a sinistra, form a destra -->
       <div class="contact-layout">
+
+        <!-- Colonna sinistra: link di contatto rapido -->
         <div class="contact-links reveal d3">
           <a class="contact-link-card" href="mailto:beneficogianni@gmail.com">
             <div class="contact-link-key">EMAIL</div>
@@ -247,6 +344,8 @@
           </a>
         </div>
 
+        <!-- Colonna destra: form di contatto
+             onsubmit chiama handleForm() che nasconde il form e mostra #formSuccess -->
         <div class="reveal d4">
           <form class="contact-form" id="contactForm" onsubmit="handleForm(event)">
             <div class="form-group">
@@ -266,6 +365,8 @@
               <span class="btn-icon">→</span>
             </button>
           </form>
+
+          <!-- Messaggio di successo — nascosto di default, mostrato dopo il submit -->
           <div class="form-success" id="formSuccess">
             <span class="form-success-icon">★</span>
             <span data-i="form-ok">Messaggio inviato! Ti rispondo presto.</span>
@@ -273,6 +374,7 @@
         </div>
       </div>
 
+      <!-- Footer sezione contatti -->
       <div class="contact-footer reveal">
         © 2026 Giovanni Benefico · <span data-i="catch-em">Acchiappali tutti.</span>
       </div>
@@ -281,6 +383,7 @@
   </main>
 </div>
 
+<!-- Script principale: dati, i18n, render dinamico, interazioni UI -->
 <script src="script.js"></script>
 </body>
 </html>
