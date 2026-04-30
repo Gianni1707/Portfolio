@@ -1,72 +1,286 @@
 <!DOCTYPE html>
-<!-- Document type declaration: Specifies that this is an HTML5 document -->
 <html lang="it">
-<!-- Root element of the HTML document, with language set to Italian -->
-
-<!-- Head section: Contains meta-information about the document, such as character encoding, viewport settings, title, and links to external stylesheets -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Giovanni Benefico</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Giovanni Benefico — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
-<!-- Body section: Contains the visible content of the webpage, including header, main content, and footer -->
 <body>
 
-<!-- Header section: Contains the site title and navigation menu for easy access to different parts of the page -->
-<header>
-    <h1>Giovanni Benefico</h1>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+<button id="burger" aria-label="Menu">
+  <span class="burger-line"></span>
+  <span class="burger-line"></span>
+  <span class="burger-line"></span>
+</button>
+<div id="overlay"></div>
+
+<div id="app">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <aside id="sidebar">
+    <div class="sidebar-logo">
+      <span class="pixel-ball"></span>
+      <span class="pokefont" style="font-size:10px">POKÉDEX OS</span>
+    </div>
+
+    <div class="trainer-card">
+      <div class="trainer-avatar">
+        <span class="trainer-avatar-placeholder">👾</span>
+      </div>
+      <div class="display" style="font-weight:700;font-size:18px">Giovanni Benefico</div>
+      <div class="mono" style="font-size:11px;color:rgba(0,0,0,.5)">@Gianni1707 · #1707</div>
+      <div style="font-size:13px;color:rgba(0,0,0,.65)" data-i="role-sidebar">Studente di Informatica & Sviluppatore · Bari, IT</div>
+    </div>
+
+    <div class="dot-rule"></div>
+
+    <nav id="nav">
+      <button class="nav-btn active" data-sec="hero">
+        <span class="nav-label"><span class="nav-num">01</span><span data-i="nav-home">Home</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px">▶</span>
+      </button>
+      <button class="nav-btn" data-sec="about">
+        <span class="nav-label"><span class="nav-num">02</span><span data-i="nav-about">Chi sono</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px;opacity:0">▶</span>
+      </button>
+      <button class="nav-btn" data-sec="edu">
+        <span class="nav-label"><span class="nav-num">03</span><span data-i="nav-edu">Istruzione</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px;opacity:0">▶</span>
+      </button>
+      <button class="nav-btn" data-sec="skills">
+        <span class="nav-label"><span class="nav-num">04</span><span data-i="nav-skills">Skill</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px;opacity:0">▶</span>
+      </button>
+      <button class="nav-btn" data-sec="projects">
+        <span class="nav-label"><span class="nav-num">05</span><span data-i="nav-projects">Progetti</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px;opacity:0">▶</span>
+      </button>
+      <button class="nav-btn" data-sec="contact">
+        <span class="nav-label"><span class="nav-num">06</span><span data-i="nav-contact">Contatti</span></span>
+        <span class="nav-arrow pokefont" style="font-size:8px;opacity:0">▶</span>
+      </button>
     </nav>
-</header>
 
-<!-- Main content area: Contains the primary sections of the portfolio, such as hero, about, skills, and contact -->
-<main>
+    <div class="dot-rule"></div>
 
-<!-- Hero section: Introductory section at the top of the page, presenting the person's role and passion -->
-<section id="hero">
-    <h2>Studente informatico</h2>
-    <p>Sviluppatore appassionato di tecnologia</p>
-</section>
+    <div class="lang-pill">
+      <button class="lang-btn active" data-lang="it">IT</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
 
-<!-- About section: Provides information about the person, where they can describe themselves -->
-<section id="about">
-    <h2>About</h2>
-    <p>Studente al secondo anno di Informatica e Tecniche per la Produzione del Software.<br>
-        Background da Istituto Tecnico Informatico.<br> 
-        Appassionato di coding e pronto a trasformare la teoria in pratica.</p>
-</section>
+    <div class="sidebar-footer">
+      © 2026 — BENEFICO.DEX<br>
+      v.1.7.07 · build@bari
+    </div>
+  </aside>
 
-<!-- Skills section: Lists the person's technical skills in an unordered list -->
-<section id="skills">
-    <h2>Skills</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>TypeScript</li>
-    </ul>
-</section>
+  <!-- ══ MAIN ═════════════════════════════════════════════════ -->
+  <main id="main">
 
-<!-- Contact section: Provides contact information, such as email -->
-<section id="contact">
-    <h2>Contatti</h2>
-    <p>Email: beneficogianni@gmail.com</p>
-</section>
+    <!-- ── HERO ─────────────────────────────────── -->
+    <section class="section active" id="sec-hero">
+      <div class="hero-glow" id="heroGlow"></div>
 
-</main>
+      <div class="hero-badge mono reveal d1">
+        ENTRY · #1707 / TRAINER · <span data-i="location">BARI, ITALIA</span>
+      </div>
 
-<!-- Footer section: Contains copyright information and other site-wide details -->
-<footer>
-    <p>© 2026 Giovanni Benefico</p>
-</footer>
+      <h1 class="hero-name reveal d2">
+        Giovanni<br>Benefico<span class="dot">.</span>
+      </h1>
 
-<!-- Script tag: Links to an external JavaScript file for interactive functionality -->
+      <div class="hero-grid">
+        <p class="hero-bio reveal d3" data-i="about">
+          Studente di Informatica all'Università di Bari, con un diploma da Perito Informatico. Mi muovo tra C, C++, Java e Python, ma resto curioso davanti a tutto ciò che si può programmare. Costruisco progetti, imparo dagli errori, e ogni bug sconfitto è un punto esperienza guadagnato.
+        </p>
+
+        <div class="stats-card reveal d4">
+          <div class="stats-label">BASE STATS</div>
+          <div class="stat-row">
+            <span class="stat-name">HP</span><span class="stat-val">78</span>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#6FAE54" data-val="78"></div></div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-name">ATK</span><span class="stat-val">72</span>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#EE1515" data-val="72"></div></div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-name">DEF</span><span class="stat-val">64</span>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#3B5BAA" data-val="64"></div></div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-name">SPA</span><span class="stat-val">88</span>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#9B59B6" data-val="88"></div></div>
+          </div>
+          <div class="stat-row">
+            <span class="stat-name">SPD</span><span class="stat-val">80</span>
+            <div class="stat-bar-wrap"><div class="stat-bar-fill" style="background:#FFCB05" data-val="80"></div></div>
+          </div>
+          <div class="stats-owner">
+            <span class="mono" style="font-size:11px;color:rgba(0,0,0,.45)">OWNED BY</span>
+            <span class="display" style="font-weight:700">@Gianni1707</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ABOUT ─────────────────────────────────── -->
+    <section class="section" id="sec-about">
+      <div class="section-eyebrow reveal">02 · <span data-i="sec-about">PROFILO ALLENATORE</span></div>
+      <h2 class="section-title reveal d1" data-i="sec-about-title">Profilo Allenatore</h2>
+
+      <div class="about-grid">
+        <p class="about-bio reveal d2" data-i="about">
+          Studente di Informatica all'Università di Bari, con un diploma da Perito Informatico. Mi muovo tra C, C++, Java e Python, ma resto curioso davanti a tutto ciò che si può programmare. Costruisco progetti, imparo dagli errori, e ogni bug sconfitto è un punto esperienza guadagnato.
+        </p>
+        <ul class="about-facts reveal d3">
+          <li class="about-fact">
+            <span class="about-fact-key" data-i="fact-base">BASE</span>
+            <span class="about-fact-val">Bari, IT</span>
+          </li>
+          <li class="about-fact">
+            <span class="about-fact-key" data-i="fact-status">STATUS</span>
+            <span class="about-fact-val" data-i="fact-status-val">Studente · 2° anno</span>
+          </li>
+          <li class="about-fact">
+            <span class="about-fact-key" data-i="fact-langs">LINGUE</span>
+            <span class="about-fact-val">IT · EN</span>
+          </li>
+          <li class="about-fact">
+            <span class="about-fact-key" data-i="fact-avail">DISPONIBILITÀ</span>
+            <span class="about-fact-val" data-i="fact-avail-val">Aperto a stage</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── EDUCATION ─────────────────────────────── -->
+    <section class="section" id="sec-edu">
+      <div class="section-eyebrow reveal">03 · <span data-i="sec-edu">BADGE OTTENUTI</span></div>
+      <h2 class="section-title reveal d1" data-i="sec-edu-title">Badge Ottenuti</h2>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal d2">
+          <div class="edu-badge hex" style="background:#3B5BAA">
+            <span class="pokefont" style="font-size:14px">U</span>
+          </div>
+          <div>
+            <div class="edu-years">2023 → <span data-i="present">Presente</span></div>
+            <div class="edu-title">Università di Bari</div>
+            <div class="edu-sub" data-i="uni-sub">Tecniche per la Produzione del Software</div>
+            <span class="chip-8">LV. UNI</span>
+          </div>
+        </div>
+        <div class="edu-card reveal d3">
+          <div class="edu-badge pent" style="background:#6FAE54">
+            <span class="pokefont" style="font-size:14px">I</span>
+          </div>
+          <div>
+            <div class="edu-years">2019 → 2023</div>
+            <div class="edu-title" data-i="itis-title">Istituto Tecnico Informatico</div>
+            <div class="edu-sub" data-i="itis-sub">Diploma di Perito Informatico</div>
+            <span class="chip-8">LV. ITIS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SKILLS ─────────────────────────────────── -->
+    <section class="section" id="sec-skills">
+      <div class="section-eyebrow reveal">04 · <span data-i="sec-skills">TIPI &amp; MOSSE</span></div>
+      <h2 class="section-title reveal d1" data-i="sec-skills-title">Tipi &amp; Mosse</h2>
+      <p class="reveal d2" style="font-size:15px;color:rgba(0,0,0,.55);margin-bottom:24px;max-width:600px" data-i="skills-sub">
+        Le mie skill come tipi Pokémon. Ogni tipo ha le sue mosse.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-table reveal d2" id="skillTable"></div>
+        <div class="moves-panel reveal d3" id="movesPanel">
+          <div class="moves-empty body">
+            <span class="hint-arrow">↑</span> <span data-i="click-hint">Clicca un tipo per vedere le mosse</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJECTS ───────────────────────────────── -->
+    <section class="section" id="sec-projects">
+      <div class="section-eyebrow reveal">05 · <span data-i="sec-projects">POKÉDEX DEI PROGETTI</span></div>
+      <h2 class="section-title reveal d1" data-i="sec-projects-title">Pokédex dei Progetti</h2>
+      <p class="reveal d2" style="font-size:15px;color:rgba(0,0,0,.55);margin-bottom:24px;max-width:600px" data-i="projects-sub">
+        Una collezione di creature digitali catturate su GitHub.
+      </p>
+      <div class="projects-grid reveal d3" id="projectsGrid"></div>
+    </section>
+
+    <!-- ── CONTACT ────────────────────────────────── -->
+    <section class="section" id="sec-contact">
+      <div class="contact-eyebrow reveal mono">06 · <span data-i="sec-contact">PUNTO DI CONTATTO</span></div>
+      <h2 class="contact-title reveal d1 display">
+        Punto di<br>Contatto<span class="dot">.</span>
+      </h2>
+      <p class="contact-copy reveal d2" data-i="contact-copy">
+        Pronto per una nuova sfida? Mandami un messaggio.
+      </p>
+
+      <div class="contact-layout">
+        <div class="contact-links reveal d3">
+          <a class="contact-link-card" href="mailto:beneficogianni@gmail.com">
+            <div class="contact-link-key">EMAIL</div>
+            <div class="contact-link-val">beneficogianni@gmail.com</div>
+          </a>
+          <a class="contact-link-card" href="tel:+393880956792">
+            <div class="contact-link-key">PHONE</div>
+            <div class="contact-link-val">+39 388 095 6792</div>
+          </a>
+          <a class="contact-link-card" href="https://github.com/Gianni1707" target="_blank" rel="noreferrer">
+            <div class="contact-link-key">GITHUB</div>
+            <div class="contact-link-val">github.com/Gianni1707</div>
+          </a>
+          <a class="contact-link-card" href="https://www.linkedin.com/in/giovanni-benefico-b06741362" target="_blank" rel="noreferrer">
+            <div class="contact-link-key">LINKEDIN</div>
+            <div class="contact-link-val">linkedin.com/in/giovanni-benefico</div>
+          </a>
+        </div>
+
+        <div class="reveal d4">
+          <form class="contact-form" id="contactForm" onsubmit="handleForm(event)">
+            <div class="form-group">
+              <label class="form-label" data-i="form-name">NOME</label>
+              <input class="form-input" type="text" required placeholder="Il tuo nome" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i="form-email">EMAIL</label>
+              <input class="form-input" type="email" required placeholder="tua@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i="form-msg">MESSAGGIO</label>
+              <textarea class="form-textarea" required placeholder="Scrivi qui..."></textarea>
+            </div>
+            <button class="form-btn" type="submit">
+              <span data-i="form-send">Invia messaggio</span>
+              <span class="btn-icon">→</span>
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <span class="form-success-icon">★</span>
+            <span data-i="form-ok">Messaggio inviato! Ti rispondo presto.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-footer reveal">
+        © 2026 Giovanni Benefico · <span data-i="catch-em">Acchiappali tutti.</span>
+      </div>
+    </section>
+
+  </main>
+</div>
+
 <script src="script.js"></script>
-
 </body>
 </html>
