@@ -26,7 +26,7 @@
 
       "hero.eyebrow": "Ciao, sono",
       "hero.role": "Sviluppatore Software & Studente di Informatica",
-      "hero.lead": "Costruisco software che va dal web ai sistemi embedded: bot di automazione, stazioni meteo su microcontrollore e applicazioni da riga di comando. Studio Informatica all'Università di Bari e mi appassiona l'accessibilità digitale.",
+      "hero.lead": "Costruisco sistemi software che vanno dal web ai sistemi embedded: bot di automazione, stazioni meteo su microcontrollore e applicazioni da riga di comando. Studio Informatica all'Università di Bari e mi appassiona l'accessibilità digitale.",
       "hero.cta1": "Vedi i progetti",
       "hero.cta2": "Contattami",
 
@@ -43,6 +43,8 @@
 
       "projects.title": '<span class="section__num">02.</span> Progetti',
       "projects.intro": "Una selezione dai miei repository pubblici su GitHub.",
+      "proj.monkey_t": "MonkeyBirdie",
+      "proj.monkey": "App di birdwatching che riconosce le specie di uccelli dal canto (BirdNET) e dalle foto (AIY Birds), interamente on-device. Registra gli avvistamenti con foto, data e posizione, li mostra su mappa e permette di condividerli; schede specie con tassonomia e dati di distribuzione da GBIF, collezioni e profili utente.",
       "proj.smart_t": "Smart Mobility",
       "proj.smart": "Applicazione web per lo sharing di biciclette e monopattini nell'area urbana di Bari. Tre ruoli — utente, operatore e amministrazione pubblica — con mappa interattiva, prenotazione e sblocco dei mezzi, gestione di flotta e manutenzione e dashboard di monitoraggio con report.",
       "proj.portfolio_t": "Sito Portfolio",
@@ -108,7 +110,7 @@
 
       "hero.eyebrow": "Hi, I'm",
       "hero.role": "Software Developer & Computer Science Student",
-      "hero.lead": "I build software that spans from the web to embedded systems: automation bots, microcontroller weather stations and command-line applications. I study Computer Science at the University of Bari and I'm passionate about digital accessibility.",
+      "hero.lead": "I build software systems that span from the web to embedded systems: automation bots, microcontroller weather stations and command-line applications. I study Computer Science at the University of Bari and I'm passionate about digital accessibility.",
       "hero.cta1": "View Projects",
       "hero.cta2": "Contacts",
 
@@ -125,6 +127,8 @@
 
       "projects.title": '<span class="section__num">02.</span> Projects',
       "projects.intro": "A selection from my public GitHub repositories.",
+      "proj.monkey_t": "MonkeyBirdie",
+      "proj.monkey": "Birdwatching app that identifies bird species by their song (BirdNET) and photos (AIY Birds), entirely on-device. It logs sightings with photos, date and location, shows them on a map and lets you share them; species cards with taxonomy and distribution data from GBIF, collections and user profiles.",
       "proj.smart_t": "Smart Mobility",
       "proj.smart": "Web app for bike and scooter sharing across the urban area of Bari. Three roles — user, operator and public administration — with an interactive map, vehicle booking and unlocking, fleet and maintenance management, and a monitoring dashboard with reports.",
       "proj.portfolio_t": "Portfolio Website",

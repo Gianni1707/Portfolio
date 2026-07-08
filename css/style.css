@@ -521,6 +521,11 @@ code {
   align-items: center;
   justify-content: space-between;
 }
+.project__links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .project__folder { color: var(--accent); }
 .project__link {
   display: inline-grid;

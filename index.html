@@ -23,7 +23,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="css/style.css?v=7" />
+  <link rel="stylesheet" href="css/style.css?v=8" />
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="a11y.skip">Salta al contenuto</a>
@@ -142,7 +142,32 @@
         <p class="section__intro reveal" data-i18n="projects.intro">Una selezione dai miei repository pubblici su GitHub.</p>
 
         <ul class="projects" role="list">
-          <!-- 1 · Smart Mobility -->
+          <!-- 1 · MonkeyBirdie -->
+          <li class="project reveal">
+            <div class="project__head">
+              <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project__links">
+                <a class="project__link" href="https://www.monkeybirdie.com" target="_blank" rel="noopener noreferrer" aria-label="Apri il sito di MonkeyBirdie">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </a>
+                <a class="project__link" href="https://github.com/Gianni1707/monkey_birdie" target="_blank" rel="noopener noreferrer" aria-label="Apri MonkeyBirdie su GitHub">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project__title" data-i18n="proj.monkey_t">MonkeyBirdie</h3>
+            <p class="project__desc" data-i18n="proj.monkey">
+              App di birdwatching che riconosce le specie di uccelli dal canto (BirdNET) e dalle foto
+              (AIY Birds), interamente on-device. Registra gli avvistamenti con foto, data e posizione,
+              li mostra su mappa e permette di condividerli; schede specie con tassonomia e dati di
+              distribuzione da GBIF, collezioni e profili utente.
+            </p>
+            <ul class="project__tags" role="list">
+              <li>Flutter</li><li>Dart</li><li>TensorFlow Lite</li><li>Supabase</li><li>BirdNET</li>
+            </ul>
+          </li>
+
+          <!-- 2 · Smart Mobility -->
           <li class="project reveal">
             <div class="project__head">
               <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -162,7 +187,7 @@
             </ul>
           </li>
 
-          <!-- 2 · Sito Portfolio (questo sito) -->
+          <!-- 3 · Sito Portfolio (questo sito) -->
           <li class="project reveal">
             <div class="project__head">
               <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -181,7 +206,7 @@
             </ul>
           </li>
 
-          <!-- 3 · Progetti TCP / UDP -->
+          <!-- 4 · Progetti TCP / UDP -->
           <li class="project reveal">
             <div class="project__head">
               <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -200,7 +225,7 @@
             </ul>
           </li>
 
-          <!-- 4 · Bot WhatsApp & Telegram -->
+          <!-- 5 · Bot WhatsApp & Telegram -->
           <li class="project reveal">
             <div class="project__head">
               <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -219,7 +244,7 @@
             </ul>
           </li>
 
-          <!-- 5 · Weather Station -->
+          <!-- 6 · Weather Station -->
           <li class="project reveal">
             <div class="project__head">
               <svg class="project__folder" viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -394,11 +419,11 @@
 
   <footer class="site-footer">
     <div class="container site-footer__inner">
-      <p>© <span id="year">2026</span> Giovanni Benefico <span class="site-footer__version" title="Versione del sito">v2.3</span></p>
+      <p>© <span id="year">2026</span> Giovanni Benefico <span class="site-footer__version" title="Versione del sito">v2.4</span></p>
       <a class="site-footer__top" href="#top" aria-label="Torna su" data-i18n="footer.top">↑ Torna su</a>
     </div>
   </footer>
 
-  <script src="js/main.js?v=7" defer></script>
+  <script src="js/main.js?v=8" defer></script>
 </body>
 </html>
